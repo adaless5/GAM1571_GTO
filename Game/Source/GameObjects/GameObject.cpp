@@ -4,6 +4,7 @@
 #include "GameObjects/Ball.h"
 #include "GameObjects/Camera.h"
 #include "GameObjects/GameObject.h"
+ 
 
 using namespace fw;
 
@@ -14,6 +15,7 @@ GameObject::GameObject(Game* pGame, Mesh* pMesh, ShaderProgram* pShader, GLuint 
 , m_TextureID( textureID )
 , m_Position( position )
 , m_Radius( 2 )
+, m_Angle( 0 )
 {
 }
 
@@ -34,7 +36,7 @@ void GameObject::Update(float deltaTime)
 void GameObject::Draw(Camera* pCamera)
 {
 	if( m_pMesh != 0 )
-        m_pMesh->Draw( pCamera, m_pShader, m_Position, m_TextureID );
+        m_pMesh->Draw( pCamera, m_pShader, m_Position, m_Angle, m_TextureID );
 }
 
 bool GameObject::IsColliding(GameObject* pOtherGameObject)

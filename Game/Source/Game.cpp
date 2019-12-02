@@ -98,7 +98,7 @@ void Game::Init()
     //m_pCamera = new Camera( this, m_pPlayer, vec2( 50, 50 ), vec2( 1/50.0f, 1/50.0f ) );
     m_pVehicle = new Vehicle(this, m_pMeshVehicle, m_pShaderTexture, m_TextureCar, vec2(200, 150), 1, m_pTilemap, m_pController);
     m_pPlayer = new Player(this, m_pMeshTriangle, m_pShaderColor, m_TextureBall, vec2(200, 200), 0, m_pTilemap, m_pController, m_pVehicle);
-    m_pCamera = new Camera(this, m_pPlayer, vec2(50, 50), vec2(1 / 30.0f, 1 / 30.0f));
+    m_pCamera = new Camera(this, m_pPlayer, m_pVehicle, vec2(50, 50), vec2(1 / 30.0f, 1 / 30.0f));
     m_pBall = new Ball( this, m_pMeshCircle, m_pShaderTexture, m_TextureBall, vec2( 50, 50 ) );
 }
 

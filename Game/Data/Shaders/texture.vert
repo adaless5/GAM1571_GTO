@@ -6,12 +6,16 @@ attribute vec2 a_UV;
 uniform vec2 u_ObjectTranslation;
 uniform vec2 u_CameraTranslation;
 uniform vec2 u_ProjectionScale;
+uniform float u_Angle; 
 
 varying vec2 v_UV;
 
 void main()
 {
     vec2 pos = a_Position;
+
+	pos = vec2( pos.x*cos(u_Angle) - pos.y*sin(u_Angle),
+                pos.x*sin(u_Angle) + pos.y*cos(u_Angle) );
 
     pos += u_ObjectTranslation;
     pos += u_CameraTranslation;

@@ -14,6 +14,7 @@ protected:
     GLuint m_TextureID;
     fw::vec2 m_Position;
     float m_Radius;
+	float m_Angle; 
 
 public:
     GameObject(Game* pGame, Mesh* pMesh, fw::ShaderProgram* pShader, GLuint textureID, fw::vec2 position);

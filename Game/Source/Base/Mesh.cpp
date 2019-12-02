@@ -34,7 +34,7 @@ void Mesh::Init(VertexFormat* pVerts, unsigned int numVerts, GLenum primitiveTyp
     m_PrimitiveType = primitiveType;
 }
 
-void Mesh::Draw(Camera* pCamera, ShaderProgram* pShader, vec2 pos, GLuint textureID)
+void Mesh::Draw(Camera* pCamera, ShaderProgram* pShader, vec2 pos, float angle, GLuint textureID)
 {
     assert( m_PrimitiveType != -1 );
     assert( m_NumVerts != 0 );
@@ -71,6 +71,12 @@ void Mesh::Draw(Camera* pCamera, ShaderProgram* pShader, vec2 pos, GLuint textur
     {
         glUniform2f( uObjectTranslation, pos.x, pos.y );
     }
+
+	GLint uAngle = glGetUniformLocation(pShader->GetProgram(), "u_Angle"); 
+	if (uAngle != -1)
+	{
+		glUniform1f(uAngle, angle / 180.0f * PI);
+	}
 
     GLint uCameraTranslation = glGetUniformLocation( pShader->GetProgram(), "u_CameraTranslation" );
     if( uCameraTranslation != -1 )

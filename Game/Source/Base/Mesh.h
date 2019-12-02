@@ -19,7 +19,7 @@ public:
     ~Mesh();
 
     void Init(VertexFormat* pVerts, unsigned int numVerts, GLenum primitiveType);
-    void Draw(Camera* pCamera, fw::ShaderProgram* pShader, fw::vec2 pos, GLuint textureID);
+    void Draw(Camera* pCamera, fw::ShaderProgram* pShader, fw::vec2 pos, float angle, GLuint textureID);
 
     void GenerateTriangle();
     void GenerateCircle();

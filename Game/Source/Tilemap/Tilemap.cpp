@@ -108,7 +108,7 @@ void Tilemap::Draw(Camera* pCamera)
 
             vec2 pos( x * m_TileSize.x, y * m_TileSize.y );
 
-            pProp->m_pMesh->Draw( pCamera, pProp->m_pShader, pos, pProp->m_TextureID );
+            pProp->m_pMesh->Draw( pCamera, pProp->m_pShader, pos, 0, pProp->m_TextureID );
         }
     }
 }
